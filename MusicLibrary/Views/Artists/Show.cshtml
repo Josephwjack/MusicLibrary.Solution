@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using MusicLibrary.Models;
+
+<h3>Here are all the records for this artist:</h3>
+
+<ol>
+@foreach (Record record in @Model["records"])
+{
+  <li><a href='artists/@Model["artist"].Id/records/@record.Id'>@record.Title</a></li>
+}
+</ol>
+
+<p><a href='/artists/@Model["artist"].Id/records/new'>Add new record</a></p>
+<p><a href='/artists'>Return to artist list</a></p>
+<p><a href='/'>Return to Main Page</a></p>

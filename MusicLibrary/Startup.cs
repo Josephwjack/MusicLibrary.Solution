@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-//Use namespace that reflects name of project
-namespace Template 
+
+namespace MusicLibrary 
 {
   public class Startup
   {
@@ -31,7 +31,7 @@ namespace Template
       app.UseDeveloperExceptionPage(); 
       
       app.UseRouting();
-
+      app.UseStaticFiles();
       app.UseEndpoints(routes =>
       {
         routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
