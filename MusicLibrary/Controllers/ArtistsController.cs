@@ -46,6 +46,7 @@ namespace MusicLibrary.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       Artist foundArtist = Artist.Find(artistId);
       Record newRecord = new Record(recordTitle);
+      newRecord.Save();
       foundArtist.AddRecord(newRecord);
       List<Record> artistRecords = foundArtist.Records;
       model.Add("records", artistRecords);
